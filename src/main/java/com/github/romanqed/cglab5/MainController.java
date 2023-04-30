@@ -110,6 +110,10 @@ public class MainController implements Initializable {
 
     @FXML
     protected void onDelayedFill() {
+        if (figures.isEmpty()) {
+            Util.showInfo("Пустой холст", "Добавьте сначала фигуры");
+            return;
+        }
         this.refresh();
         context.setLineWidth(1);
         DrawBuffer buffer = new DrawBuffer();
@@ -122,6 +126,10 @@ public class MainController implements Initializable {
 
     @FXML
     protected void onFill() {
+        if (figures.isEmpty()) {
+            Util.showInfo("Пустой холст", "Добавьте сначала фигуры");
+            return;
+        }
         this.refresh();
         context.setLineWidth(1);
         DrawBuffer buffer = new DrawBuffer();
