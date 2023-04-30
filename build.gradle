@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.github.romanqed'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+application {
+    mainClass = 'com.github.romanqed.cglab5.HelloApplication'
+}
+
+dependencies {
+    implementation group: 'org.atteo.classindex', name: 'classindex', version: '3.11'
+    annotationProcessor group: 'org.atteo.classindex', name: 'classindex', version: '3.11'
+}
